@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res" >
+            <file
+                name="dialog_button_colorlist"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable/dialog_button_colorlist.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="dialog_button_submit"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable/dialog_button_submit.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="refresh_button"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable/refresh_button.xml"
+                qualifiers=""
+                type="drawable" />
+            <file
+                name="dialog_bg_click"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable-hdpi/dialog_bg_click.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="dialog_bg_normal"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable-hdpi/dialog_bg_normal.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="dialog_cut_line"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable-hdpi/dialog_cut_line.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="dialog_split_h"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable-hdpi/dialog_split_h.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="dialog_split_v"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable-hdpi/dialog_split_v.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="popup_bg"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable-hdpi/popup_bg.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="refresh"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable-hdpi/refresh.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="refresh_push"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable-hdpi/refresh_push.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="title"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable-hdpi/title.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="title_background"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable-hdpi/title_background.9.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="alipay"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/layout/alipay.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="alipay_title"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/layout/alipay_title.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="dialog_alert"
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/layout/dialog_alert.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/values/colorlist.xml"
+                qualifiers="" >
+                <color name="dialog_tiltle_blue" >#2277BB
+                </color>
+                <color name="TextColorWhite" >#FFFFFFFF
+                </color>
+                <color name="TextColorGray" >#FF505050
+                </color>
+                <color name="bgColor" >#FFF2F2F2
+                </color>
+                <color name="downLoadTextNomal" >#FF3366CC
+                </color>
+                <color name="TextColorBlack" >#FF000000
+                </color>
+                <color name="downLoadBackNomal" >#FFFFFFFF
+                </color>
+                <color name="downLoadBackPressed" >#FF3366CC
+                </color>
+                <color name="textColorforCheckBox" >#FF333333
+                </color>
+                <color name="downLoadTextPressed" >#FFFFFFFF
+                </color>
+                <color name="ToastBgColor" >#FF424242
+                </color>
+                <color name="btnColor" >#FFFFFF
+                </color>
+                <color name="downLoadBackFocus" >#FF6698E7
+                </color>
+                <color name="secondbtntextColor" >#FF496ea3
+                </color>
+                <color name="textColorforItemTitle" >#FF666666
+                </color>
+            </file>
+            <file
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string name="cancel_install_msp" >你已取消安装移动快捷支付服务
+                </string>
+                <string name="redo" >重试
+                </string>
+                <string name="install_alipay" >你尚未安装支付宝钱包，请立即安装
+                </string>
+                <string name="confirm_title" >提示
+                </string>
+                <string name="download" >下载
+                </string>
+                <string name="cancel" >取消
+                </string>
+                <string name="cancel_install_alipay" >你已取消安装支付宝钱包
+                </string>
+                <string name="download_fail" >下载安装包失败
+                </string>
+                <string name="install_msp" >你尚未安装支付宝移动快捷支付服务，请立即安装
+                </string>
+                <string name="ensure" >确定
+                </string>
+                <string name="content_description_icon" >icon
+                </string>
+                <string name="refresh" >刷新
+                </string>
+                <string name="processing" >加载中
+                </string>
+            </file>
+            <file
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/values/styles.xml"
+                qualifiers="" >
+
+                <style
+                    name="AlertDialog"
+                    parent="android:Theme.Dialog" >
+                    <item name="android:windowNoTitle">
+true
+                    </item>
+                    <item name="android:windowBackground">
+@drawable/popup_bg
+                    </item>
+                </style>
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Light" >
+
+                    <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+                    -->
+                </style>
+
+                <style
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/values-v11/styles.xml"
+                qualifiers="v11" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light" >
+
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file
+                path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/values-v14/styles.xml"
+                qualifiers="v14" >
+
+                <style
+                    name="AppBaseTheme"
+                    parent="android:Theme.Holo.Light.DarkActionBar" >
+
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+        </source>
+        <source path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/build/generated/res/rs/debug" />
+        <source path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/build/generated/res/generated/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/debug/res" />
+    </dataSet>
+
+</merger>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:background="@drawable/listitem_touch_selector">
+
+    <FrameLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_list_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/demo" />
+
+        <!--android:adjustViewBounds="true"-->
+        <!--wrong: fitCenter centerInside-->
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_list_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="@string/demo"/>
+
+        <TextView
+            android:id="@+id/tv_list_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:text="@string/text_listiem_info"
+            android:textStyle="bold"
+            android:textColor="@color/darkorange"/>
+
+        <TextView
+            android:id="@+id/tv_list_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/shanshan_grey"
+            android:text="@string/demo" />
+    </LinearLayout>
+
+
+</LinearLayout>

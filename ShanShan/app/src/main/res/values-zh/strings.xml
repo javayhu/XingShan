@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="demo">测试字符串</string>
+
+    <string name="action_settings">设置</string>
+    <string name="app_name">使徒行善</string>
+    <string name="title_activity_project">爱心捐款项目</string>
+    <string name="title_activity_project_detail">爱心项目介绍</string>
+    <string name="text_listiem_info">目前共有%1$s位使徒捐款\n总共筹集%2$s元爱心善款</string>
+    <string name="text_detail_info">目前共有%1$s位使徒捐款，总共筹集%2$s元爱心善款</string>
+    <string name="donate">我要捐款！</string>
+    <string name="text_listiemq_info">目前共有%1$s人完成任务</string>
+    <string name="title_activity_task">问卷调查任务</string>
+    <string name="text_list_loading">玩命加载数据中...</string>
+
+    <string name="character_ding">善良的钉姐</string>
+    <string name="character_sed">机智的爆Sed哥</string>
+    <string name="task_finished">恭喜你获得10个积分！</string>
+    <string name="text_main_projects">做善事</string>
+    <string name="text_main_tasks">做任务</string>
+    <string name="text_start_enter">开始行动！</string>
+    <string name="text_start_info1">你喜欢使徒行者吗?\n你想成为其中的一员吗?\n选择你想要的角色来加入我们吧!</string>
+    <string name="text_start_info2">现在你是一名使徒,\n你的任务是帮助需要帮助的人,\n但是你要先完成任务得到积分才行!</string>
+    <string name="text_start_info3">欢迎你加入我们的队伍!\n你可千万不要忘记你的任务哟!</string>
+    <string name="text_start_swipe">向左滑动继续</string>
+    <string name="title_activity_donate">爱心捐款</string>
+    <string name="title_activity_guide">应用指南</string>
+    <string name="title_activity_task_detail">任务详情</string>
+    <string name="tv_main_userid">使徒编号:</string>
+    <string name="tv_main_userlevel">使徒等级:</string>
+    <string name="tv_main_username">使徒名称:</string>
+    <string name="text_start_welcome">使徒行善\n让行善成为一种习惯</string>
+    <string name="btn_donate_pay">支付!</string>
+    <string name="text_donate_channel">选择支付方式</string>
+    <string name="text_donate_money">编辑支付金额</string>
+    <string name="text_start_copyright">版权所有©2014 - Javay, Tsinghua University</string>
+    <string name="text_donate_alipay">支付宝支付 </string>
+    <string name="text_donate_pointspay">积分支付 (你现在有 %1$s 积分=%2$s RMB)</string>
+    <string name="text_donate_upmp">银联支付 </string>
+    <string name="text_donate_wechatpay">微信支付 </string>
+    <string name="text_donate_amoutempty">请输入您的捐款金额</string>
+    <string name="text_donate_amoutpoints">您的积分不够支付输入的金额</string>
+    <string name="text_donate_cancel">您取消了支付！</string>
+    <string name="text_donate_fail">支付失败！但还是感谢您的善意，请您检查错误重试！</string>
+    <string name="text_donate_invalid">支付失败！原因是证书不合格！</string>
+    <string name="text_donate_success">支付成功！感谢您的善意！</string>
+    <string name="text_main_donations">捐款总额</string>
+    <string name="text_main_points">剩余积分</string>
+
+</resources>

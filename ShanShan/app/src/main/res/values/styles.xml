@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionBarStyle">@style/ActionBar.Solid.ShanShan</item>
+    </style>
+
+    <style name="ShanShanTheme" parent="AppTheme">
+        <item name="actionBarStyle">@style/ActionBar.Solid.ShanShan.NoTitle</item>
+    </style>
+
+    <style name="ActionBar.Solid.ShanShan" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@color/shanshan_blue</item>
+        <!-- <item name="android:background">@drawable/tab_indicator_ab_apptheme</item> -->
+    </style>
+
+    <style name="ActionBar.Solid.ShanShan.NoTitle" parent="@style/ActionBar.Solid.ShanShan">
+        <item name="displayOptions">useLogo|showHome</item>
+        <item name="logo">@drawable/ic_launcher</item>
+        <!-- <item name="android:actionModeBackground" tools:ignore="NewApi">@drawable/demo</item> -->
+    </style>
+
+    <!--android:Theme.Holo.NoActionBar.Fullscreen -> api 11-->
+    <!--<style name="FullscreenTheme" parent="android:Theme.NoTitleBar.Fullscreen">-->
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <!--<item name="android:windowBackground">@null</item>-->
+        <!--<item name="metaButtonBarStyle">@style/ButtonBar</item>-->
+        <!--<item name="metaButtonBarButtonStyle">@style/ButtonBarButton</item>-->
+    <!--</style>-->
+
+    <!--<style name="ButtonBar">-->
+        <!--<item name="android:paddingLeft">2dp</item>-->
+        <!--<item name="android:paddingTop">5dp</item>-->
+        <!--<item name="android:paddingRight">2dp</item>-->
+        <!--<item name="android:paddingBottom">0dp</item>-->
+        <!--<item name="android:background">@android:drawable/bottom_bar</item>-->
+    <!--</style>-->
+
+    <!--<style name="ButtonBarButton" />-->
+
+</resources>

@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "shanshan.tsinghua.edu.cn.shanshan"
+        minSdkVersion 11
+        targetSdkVersion 20
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:20.0.0'
+    compile 'com.android.support:support-v4:20.0.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
+    compile 'com.github.markushi:circlebutton:1.1'
+}
+
+//FAILURE: Build failed with an exception.
+//
+//* What went wrong:
+//Execution failed for task ':app:lint'.
+//        > Lint found errors in the project; aborting build.
+//
+//        Fix the issues identified by lint, or add the following to your build script to proceed with errors:
+//...
+//android {
+//    lintOptions {
+//        abortOnError false
+//    }
+//}
+//...
+//
+//* Try:
+//Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.

@@ -1,0 +1,282 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="shanshan.tsinghua.edu.cn.shanshan.MainActivity">
+
+    <!--android:background="@color/shanshan_light_blue"-->
+
+    <RelativeLayout
+        android:id="@+id/rl_main_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/iv_main_avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/image_round"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/sed1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/iv_main_avatar">
+
+            <LinearLayout
+                android:id="@+id/ll_main_userid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_main_userid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:text="@string/tv_main_userid" />
+
+                <TextView
+                    android:id="@+id/tv_main_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/shanshan_darkviolet"
+                    android:text="user id" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_main_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/ll_main_userid">
+
+                <TextView
+                    android:id="@+id/tv_main_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:text="@string/tv_main_username" />
+
+                <TextView
+                    android:id="@+id/tv_main_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/shanshan_blue"
+                    android:text="user name" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_main_userlevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/ll_main_username">
+
+                <TextView
+                    android:id="@+id/tv_main_userlevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:text="@string/tv_main_userlevel" />
+
+                <TextView
+                    android:id="@+id/tv_main_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/shashan_darkorange"
+                    android:text="user level" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/fl_main_points"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_main_user"
+        android:layout_above="@+id/ll_main_actions"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_main_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-condensed"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/shashan_darkorange"
+            android:text="@string/text_main_points" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <shanshan.tsinghua.edu.cn.ui.LedTextView
+                android:id="@+id/ltv_main_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="88:88:88"
+                android:textColor="@color/shanshan_light_green"
+                android:textSize="60sp" />
+
+            <shanshan.tsinghua.edu.cn.ui.LedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:shadowColor="#00ff00"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="10"
+                android:textColor="#00ff00"
+                android:textSize="60sp" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_main_donations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/shashan_darkorange"
+            android:text="@string/text_main_donations" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <shanshan.tsinghua.edu.cn.ui.LedTextView
+                android:id="@+id/ltv_main_donations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="88:88:88"
+                android:textColor="@color/shanshan_light_green"
+                android:textSize="60sp" />
+
+            <shanshan.tsinghua.edu.cn.ui.LedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:shadowColor="#00ff00"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="10"
+                android:textColor="#00ff00"
+                android:textSize="60sp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!--<com.github.mikephil.charting.charts.PieChart-->
+    <!--android:id="@+id/pc_main_data"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_below="@+id/rl_main_user"-->
+    <!--android:layout_above="@+id/ll_main_actions" />-->
+
+    <LinearLayout
+        android:id="@+id/ll_main_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right|center_vertical">
+
+            <at.markushi.ui.CircleButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:onClick="gotoTasks"
+                app:cb_color="#99CC00"
+                app:cb_pressedRingWidth="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/text_main_tasks"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-condensed"
+                android:textAppearance="?android:textAppearanceMedium" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_gravity="left|center_vertical">
+
+            <at.markushi.ui.CircleButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:onClick="gotoProjects"
+                app:cb_color="@color/shanshan_light_blue"
+                app:cb_pressedRingWidth="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/text_main_projects"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-condensed"
+                android:textAppearance="?android:textAppearanceMedium" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
