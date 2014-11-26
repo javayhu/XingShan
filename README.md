@@ -24,3 +24,8 @@
 
 ![web](http://shanshanlaichi.qiniudn.com/web.png)
 
+
+Copyright 2014 
+胡家威 Javay
+[hujiaweibujidao](http://hujiaweibujidao.github.io/)
+
