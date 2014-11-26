@@ -2,7 +2,7 @@
       
 ## "使徒行善"，让我们将行善成为一种习惯！
 
-### 1. 使徒行善 安卓客户端源码
+### 1. 使徒行善 安卓客户端源码 [支持中文和英文两种语言]
 
 如果说"善良的心就是太阳"(雨果名言)，那么"使徒行善"就是让善良的种子茁壮成长的雨露！如果你是一个囊中羞涩却又想日日行善的人，那么赶紧下载"使徒行善"应用吧！你只需要完成简单的问卷调查任务就可以轻松获得收益去捐助那些需要帮助的人！
 
@@ -24,3 +24,11 @@
 
 ![web](http://shanshanlaichi.qiniudn.com/web.png)
 
+
+2014 
+
+胡家威 Javay
+
+[hujiaweibujidao](http://hujiaweibujidao.github.io/)
+
+[hujiawei090807@gmail.com](mailto:hujiawei090807@gmail.com)
