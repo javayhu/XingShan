@@ -23,7 +23,9 @@ import shanshan.tsinghua.edu.cn.listener.AnimateFirstDisplayListener;
 import shanshan.tsinghua.edu.cn.model.Project;
 import shanshan.tsinghua.edu.cn.util.AppUtil;
 
-
+/**
+ * show project detail
+ */
 public class ProjectDetailActivity extends ActionBarActivity {
 
     private TextView tv_detail_name;

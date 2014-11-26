@@ -13,6 +13,8 @@ import java.util.List;
 
 /**
  * Created by hujiawei on 14/11/24.
+ * <p/>
+ * Image loader Display listener
  */
 public class AnimateFirstDisplayListener extends SimpleImageLoadingListener {
 

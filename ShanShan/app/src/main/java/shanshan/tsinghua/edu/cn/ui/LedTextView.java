@@ -12,6 +12,11 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+/**
+ * LED Text View
+ * <p/>
+ * from 50 Android Hacks, hack 11
+ */
 public class LedTextView extends TextView {
 
     private static final String FONTS_FOLDER = "fonts";

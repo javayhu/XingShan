@@ -29,7 +29,9 @@ import shanshan.tsinghua.edu.cn.model.Task;
 import shanshan.tsinghua.edu.cn.util.AppUtil;
 import shanshan.tsinghua.edu.cn.util.ToastUtil;
 
-
+/**
+ * shoe task detail
+ */
 public class TaskDetailActivity extends ActionBarActivity {
 
     private final String TAG = TaskDetailActivity.class.getSimpleName();

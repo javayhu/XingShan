@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by hujiawei on 14/11/20.
  * <p/>
- * model Project
+ * model Project -> Project Django
  */
 
 public class Project implements Serializable{

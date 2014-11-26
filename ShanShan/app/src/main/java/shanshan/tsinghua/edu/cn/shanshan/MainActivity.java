@@ -29,7 +29,9 @@ import shanshan.tsinghua.edu.cn.listener.AnimateFirstDisplayListener;
 import shanshan.tsinghua.edu.cn.ui.LedTextView;
 import shanshan.tsinghua.edu.cn.util.AppUtil;
 
-
+/**
+ * Main activity
+ */
 public class MainActivity extends ActionBarActivity {
 
     private TextView tv_main_id;
@@ -120,26 +122,5 @@ public class MainActivity extends ActionBarActivity {
         setUIdata();
         super.onResume();
     }
-
-    //    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//        if (id == R.id.menu_action_settings) {
-//            //go to settings!
-//
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 
 }

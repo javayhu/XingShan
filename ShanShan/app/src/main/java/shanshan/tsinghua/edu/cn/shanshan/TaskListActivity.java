@@ -24,7 +24,9 @@ import java.util.List;
 
 import shanshan.tsinghua.edu.cn.model.Task;
 
-
+/**
+ * show task list
+ */
 public class TaskListActivity extends ActionBarActivity {
 
     private static final String TAG = TaskListActivity.class.getSimpleName();

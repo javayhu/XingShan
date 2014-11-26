@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by hujiawei on 14/11/20.
  * <p/>
- * model Task -> questionnair in django project
+ * model Task -> Questionnair in django project
  */
 
 public class Task implements Serializable {

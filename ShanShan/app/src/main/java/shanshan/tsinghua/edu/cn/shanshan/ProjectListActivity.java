@@ -29,7 +29,9 @@ import java.util.List;
 
 import shanshan.tsinghua.edu.cn.model.Project;
 
-
+/**
+ * show project list
+ */
 public class ProjectListActivity extends ActionBarActivity {
 
     private static final String TAG = ProjectListActivity.class.getSimpleName();

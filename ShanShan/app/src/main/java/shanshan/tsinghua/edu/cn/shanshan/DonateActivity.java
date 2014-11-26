@@ -35,7 +35,9 @@ import shanshan.tsinghua.edu.cn.model.Project;
 import shanshan.tsinghua.edu.cn.util.AppUtil;
 import shanshan.tsinghua.edu.cn.util.ToastUtil;
 
-
+/**
+ * donation
+ */
 public class DonateActivity extends ActionBarActivity implements View.OnClickListener {
 
     private static final String TAG = DonateActivity.class.getSimpleName();
