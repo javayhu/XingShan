@@ -25,7 +25,10 @@
 ![web](http://shanshanlaichi.qiniudn.com/web.png)
 
 
-Copyright 2014 
+2014 
+
 胡家威 Javay
+
 [hujiaweibujidao](http://hujiaweibujidao.github.io/)
 
+[hujiawei090807@gmail.com](mailto:hujiawei090807@gmail.com)
