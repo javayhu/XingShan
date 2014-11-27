@@ -89,7 +89,7 @@ android app端是供用户来完成问卷调查任务获取积分然后向爱心
         <span class="hidden-xs hidden-sm">简单易用的移动支付服务平台<strong>Ping++</strong></span></a>
     <a href="http://fir.im" class="list-group-item list-group-item-danger techa"><img
             src="http://shanshanlaichi.qiniudn.com/fir.png" >
-        <span class="hidden-xs hidden-sm"> 移动客户端托管分发服务平台<strong>FIR.im</strong></span></a>
+        <span class="hidden-xs hidden-sm">移动应用托管分发服务平台<strong>FIR.im</strong></span></a>
     <a href="http://segmentfault.com/" class="list-group-item list-group-item-success techa"> <img
             src="http://shanshanlaichi.qiniudn.com/sf.png"/>
         <span class="hidden-xs hidden-sm">开发者的问答交流社区<strong>SegmentFault</strong></span></a>
