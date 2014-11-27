@@ -88,7 +88,7 @@ android app端是供用户来完成问卷调查任务获取积分然后向爱心
             src="http://shanshanlaichi.qiniudn.com/pingpp.png"/>
         <span class="hidden-xs hidden-sm">简单易用的移动支付服务平台<strong>Ping++</strong></span></a>
     <a href="http://fir.im" class="list-group-item list-group-item-danger techa"><img
-            src="http://shanshanlaichi.qiniudn.com/fir.png" style="height: 42px; width: 92px;">
+            src="http://shanshanlaichi.qiniudn.com/fir.png" >
         <span class="hidden-xs hidden-sm"> 移动客户端托管分发服务平台<strong>FIR.im</strong></span></a>
     <a href="http://segmentfault.com/" class="list-group-item list-group-item-success techa"> <img
             src="http://shanshanlaichi.qiniudn.com/sf.png"/>
@@ -98,18 +98,4 @@ android app端是供用户来完成问卷调查任务获取积分然后向爱心
         <span class="hidden-xs hidden-sm">在线云存储服务平台<strong>七牛云存储</strong></span></a>
 </div>
 
-
-<style rel="stylesheet" type="text/css">
-
-.techa {
-    height: 80px;
-    line-height: 60px;
-    vertical-align: middle;
-}
-
-.techa span {
-    width: 60%;
-}
-
-</style>
 
