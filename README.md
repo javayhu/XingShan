@@ -65,8 +65,51 @@ android app端是供用户来完成问卷调查任务获取积分然后向爱心
 ![webdemo](http://shanshanlaichi.qiniudn.com/webdemo.jpg)
 
 
+#### 3.作者
+
 胡家威 Javay 2014 
 
 [hujiaweibujidao](http://hujiaweibujidao.github.io/)
 
 [hujiawei090807@gmail.com](mailto:hujiawei090807@gmail.com)
+
+#### 4.鸣谢
+
+特别感谢以下优秀科技企业的技术支持
+
+<div class="list-group">
+    <a href="http://sae.sina.com.cn/" class="list-group-item list-group-item-text techa"><img
+            src="http://shanshanlaichi.qiniudn.com/sina.png"/>
+        <span class="hidden-xs hidden-sm">网站采用Django框架开发部署于<strong>SinaAppEngine</strong></span></a>
+    <a href="https://gitcafe.com" class="list-group-item list-group-item-info techa"><img
+            src="http://shanshanlaichi.qiniudn.com/gitcafe.png"/>
+        <span class="hidden-xs hidden-sm">安卓客户端源码托管于<strong>GitCafe</strong></span></a>
+    <a href="https://pingplusplus.com/" class="list-group-item list-group-item-warning techa"><img
+            src="http://shanshanlaichi.qiniudn.com/pingpp.png"/>
+        <span class="hidden-xs hidden-sm">简单易用的移动支付服务平台<strong>Ping++</strong></span></a>
+    <a href="http://fir.im" class="list-group-item list-group-item-danger techa"><img
+            src="http://shanshanlaichi.qiniudn.com/fir.png" style="height: 42px; width: 92px;">
+        <span class="hidden-xs hidden-sm"> 移动客户端托管分发服务平台<strong>FIR.im</strong></span></a>
+    <a href="http://segmentfault.com/" class="list-group-item list-group-item-success techa"> <img
+            src="http://shanshanlaichi.qiniudn.com/sf.png"/>
+        <span class="hidden-xs hidden-sm">开发者的问答交流社区<strong>SegmentFault</strong></span></a>
+    <a href="http://www.qiniu.com/" class="list-group-item list-group-item-info techa"><img
+            src="http://shanshanlaichi.qiniudn.com/qiniu.png"/>
+        <span class="hidden-xs hidden-sm">在线云存储服务平台<strong>七牛云存储</strong></span></a>
+</div>
+
+
+<style rel="stylesheet" type="text/css">
+
+.techa {
+    height: 80px;
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+.techa span {
+    width: 60%;
+}
+
+</style>
+
