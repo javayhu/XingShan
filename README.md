@@ -67,7 +67,7 @@ android app端是供用户来完成问卷调查任务获取积分然后向爱心
 
 #### 3.作者
 
-胡家威 Javay 2014 
+2014, Javay, Tsinghua University
 
 [hujiaweibujidao](http://hujiaweibujidao.github.io/)
 
