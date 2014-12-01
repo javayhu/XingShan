@@ -24,7 +24,7 @@ android app端是供用户来完成问卷调查任务获取积分然后向爱心
 
 具体详情请看下面的介绍
 
-### 1. 使徒行善 安卓客户端 [http://fir.im/stxs/dashboard](http://fir.im/stxs/dashboard)
+### 1. 使徒行善 安卓客户端 [http://fir.im/stxs/](http://fir.im/stxs/)
 
 [目前支持中文和英文两种语言]
 
