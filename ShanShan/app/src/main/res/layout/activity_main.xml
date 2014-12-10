@@ -118,7 +118,7 @@
                     android:layout_marginLeft="10dp"
                     android:fontFamily="sans-serif-condensed"
                     android:textAppearance="?android:textAppearanceMedium"
-                    android:textColor="@color/shashan_darkorange"
+                    android:textColor="@color/shanshan_darkorange"
                     android:text="user level" />
 
             </LinearLayout>
@@ -144,7 +144,7 @@
             android:layout_gravity="center"
             android:fontFamily="sans-serif-condensed"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@color/shashan_darkorange"
+            android:textColor="@color/shanshan_darkorange"
             android:text="@string/text_main_points" />
 
         <FrameLayout
@@ -181,7 +181,7 @@
             android:layout_marginTop="20dp"
             android:fontFamily="sans-serif-condensed"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@color/shashan_darkorange"
+            android:textColor="@color/shanshan_darkorange"
             android:text="@string/text_main_donations" />
 
         <FrameLayout

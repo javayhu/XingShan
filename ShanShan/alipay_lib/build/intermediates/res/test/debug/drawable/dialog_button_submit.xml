@@ -15,4 +15,4 @@
 
     <item android:drawable="@drawable/dialog_bg_click" android:state_pressed="true"/>
 
-</selector><!-- From: file:/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable/dialog_button_submit.xml --><!-- From: file:/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/build/intermediates/bundles/debug/res/drawable/dialog_button_submit.xml -->
+</selector><!-- From: file:/Users/hujiawei/PingHackson/gitcafe/XingShan/ShanShan/alipay_lib/src/main/res/drawable/dialog_button_submit.xml --><!-- From: file:/Users/hujiawei/PingHackson/gitcafe/XingShan/ShanShan/alipay_lib/build/intermediates/bundles/debug/res/drawable/dialog_button_submit.xml -->

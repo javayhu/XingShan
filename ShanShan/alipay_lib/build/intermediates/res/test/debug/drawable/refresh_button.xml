@@ -10,4 +10,4 @@
     
     <!-- click -->
     <item android:state_pressed="true" android:drawable="@drawable/refresh_push" />
-</selector><!-- From: file:/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/src/main/res/drawable/refresh_button.xml --><!-- From: file:/Users/hujiawei/AndroidStudioProjects/ShanShan/alipay_lib/build/intermediates/bundles/debug/res/drawable/refresh_button.xml -->
+</selector><!-- From: file:/Users/hujiawei/PingHackson/gitcafe/XingShan/ShanShan/alipay_lib/src/main/res/drawable/refresh_button.xml --><!-- From: file:/Users/hujiawei/PingHackson/gitcafe/XingShan/ShanShan/alipay_lib/build/intermediates/bundles/debug/res/drawable/refresh_button.xml -->

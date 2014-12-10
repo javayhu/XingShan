@@ -44,7 +44,7 @@ public class StartActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActionBar().hide();
+        getActionBar().hide();//
         setContentView(R.layout.activity_start);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);

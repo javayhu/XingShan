@@ -38,7 +38,7 @@
             android:parentActivityName=".ProjectListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="shanshan.tsinghua.edu.cn.shanshan.ProjectActivity" />
+                android:value="shanshan.tsinghua.edu.cn.shanshan.ProjectListActivity" />
         </activity>
         <activity
             android:name=".TaskListActivity"

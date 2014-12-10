@@ -175,10 +175,6 @@ public class DonateActivity extends ActionBarActivity implements View.OnClickLis
 
         @Override
         protected void onPostExecute(String data) {
-            if (null != data) {//TODO: remove
-                System.out.println("data is " + data);//
-            }
-
             if (channel.equalsIgnoreCase(CHANNEL_POINTS)) {//points pay
                 if (resultYes(data)) {//pay yes
                     SharedPreferences.Editor editor = preferences.edit();

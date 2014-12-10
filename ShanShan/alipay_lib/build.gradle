@@ -5,14 +5,14 @@ android {
     buildToolsVersion "19.1.0"
 
     defaultConfig {
-        applicationId "com.alipay.android.app.sdk"
+//        applicationId "com.alipay.android.app.sdk"
         minSdkVersion 8
-        targetSdkVersion 17 //20?
+        targetSdkVersion 20 //20?
     }
 
     buildTypes {
         release {
-            runProguard false
+//            runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }

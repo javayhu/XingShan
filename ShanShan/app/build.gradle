@@ -13,7 +13,7 @@ android {
     }
     buildTypes {
         release {
-            runProguard false
+//            runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -29,6 +29,7 @@ dependencies {
     compile 'com.android.support:support-v4:20.0.0'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
     compile 'com.github.markushi:circlebutton:1.1'
+    compile project(':alipay_lib')
 }
 
 //FAILURE: Build failed with an exception.
