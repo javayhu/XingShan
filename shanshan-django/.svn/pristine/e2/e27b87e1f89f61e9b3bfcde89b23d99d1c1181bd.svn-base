@@ -1,0 +1,16 @@
+from django.conf.urls import patterns, include, url
+from django.conf.urls.static import static
+
+from django.contrib import admin
+from ShanShan import settings
+
+admin.autodiscover()
+
+urlpatterns = patterns('',
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'shan.views.index', name='index'),
+    url(r'^new/$','shan.views.newproject', name='newproject'),
+    url(r'^like/$', 'shan.views.like', name='like'),
+    url(r'^pay/$', 'shan.views.pay', name='pay'),
+    url(r'^notify/$', 'shan.views.notify', name='notify'),
+)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #for getting static files

@@ -1,0 +1,64 @@
+# coding=utf-8
+import json
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import render, redirect
+
+# Create your views here.
+from shan.models import Project
+import qiniu
+import qiniu.conf
+import qiniu.rs
+import qiniu.io
+
+PROJECTS_PER_PAGE = 4
+
+
+def index(request):
+    result = -1
+    if request.GET.get('result') == '1':
+        result = 1
+    elif request.GET.get('result') == '0':
+        result = 0
+    projects = Project.objects.filter(state=True)
+    page = request.GET.get('page')
+    projects = _paginator(request, projects, page=page, size=PROJECTS_PER_PAGE)
+    return render(request, 'shan/index.html', {'projects': projects, 'result': result})
+
+
+# common paginator
+def _paginator(request, objs, page=1, size=PROJECTS_PER_PAGE):
+    paginator = Paginator(objs, size)
+    try:
+        objs = paginator.page(page)
+    except PageNotAnInteger:
+        objs = paginator.page(1)
+    except EmptyPage:
+        objs = paginator.page(paginator.num_pages)
+    return objs  # actually objs is a page, so in 'paginator.html', paginator means page
+
+
+def newproject(request):
+    if request.method == 'POST':
+            project = Project()
+            project.name = request.POST.get('name')
+            project.email = request.POST.get('email')
+            project.organiser = request.POST.get('organiser')
+            project.target = float(request.POST.get('target'))
+            project.content = request.POST.get('content')
+            project.imgfile = request.FILES['imgfile']
+            project.state = True
+            project.save()
+            return redirect('/?result=1')
+    return redirect('/?result=0')
+
+BUCKET_NAME = "shanshanlaichi"
+qiniu.conf.ACCESS_KEY = "jkGarjPB6G-3YqyDwj2JU_CzianXBn5OLNpnhmaC"
+qiniu.conf.SECRET_KEY = "qHMNLS9x2lPD2M-oF-Dx_IPPUPfdP9kCbsvrAT9T"
+
+def uptoken(request):
+    policy = qiniu.rs.PutPolicy(BUCKET_NAME)
+    token = policy.token()
+    data = {'uptoken': token}
+    return HttpResponse(json.dumps(data), content_type="application/json")
+

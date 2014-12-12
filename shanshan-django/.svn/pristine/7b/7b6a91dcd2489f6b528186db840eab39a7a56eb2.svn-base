@@ -1,0 +1,137 @@
+# coding=utf-8
+
+#!/usr/bin/env python
+
+#this file is just a demo
+
+# import pingpp
+#
+# APP_ID = 'app_Tq1mjLbTunH81qPi'
+# TEST_KEY = 'sk_test_TSO0OKHe9uX1qfLm588i9ijT'
+# LIVE_KEY = '' #current no use
+#
+# pingpp.api_key = TEST_KEY
+#
+# ch = pingpp.Charge.create(
+#     order_no='1234567890',
+#     channel='alipay',
+#     amount=1,
+#     subject='test-subject',
+#     body='test-body',
+#     currency='cny',
+#     app=dict(id=APP_ID),
+#     client_ip='127.0.0.1' #must be an IP address
+# )
+#
+# print ch
+
+# {
+#   "order_no": "1234567890",
+#   "extra": {},
+#   "app": "app_Tq1mjLbTunH81qPi",
+#   "livemode": false,
+#   "currency": "cny",
+#   "time_settle": null,
+#   "time_expire": 1416320997,
+#   "id": "ch_GyH8uTf1yTCKzn1C0GG0CWn1",
+#   "subject": "test-subject",
+#   "failure_msg": null,
+#   "channel": "alipay",
+#   "metadata": {},
+#   "body": "test-body",
+#   "credential": {
+#     "alipay": {
+#       "orderInfo": "_input_charset=\"utf-8\"&body=\"test-body\"&it_b_pay=\"1440m\"&notify_url=\"https%3A%2F%2Fapi.pingplusplus.com%2Fnotify%2Fcharges%2Fch_GyH8uTf1yTCKzn1C0GG0CWn1\"&out_trade_no=\"1234567890\"&partner=\"2008025636479977\"&payment_type=\"1\"&seller_id=\"2008025636479977\"&service=\"mobile.securitypay.pay\"&subject=\"test-subject\"&total_fee=\"0.01\"&sign=\"UzQ4U0dPVGkxZUgwdXZmdmo5OTRpSEMw\"&sign_type=\"RSA\""
+#     },
+#     "object": "credential"
+#   },
+#   "client_ip": "127.0.0.1",
+#   "description": null,
+#   "amount_refunded": 0,
+#   "refunded": false,
+#   "object": "charge",
+#   "paid": false,
+#   "amount_settle": 0,
+#   "failure_code": null,
+#   "refunds": {
+#     "url": "/v1/charges/ch_GyH8uTf1yTCKzn1C0GG0CWn1/refunds",
+#     "has_more": false,
+#     "object": "list",
+#     "data": []
+#   },
+#   "created": 1416234597,
+#   "transaction_no": null,
+#   "amount": 1
+# }
+
+
+
+# import os
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ShanShan.settings")
+#
+# import json
+#
+# import types
+# from django.db import models
+# # from django.utils import simplejson as json
+# from django.core.serializers.json import DateTimeAwareJSONEncoder
+# from decimal import *
+#
+#
+# def json_encode(data):
+#     """
+#     The main issues with django's default json serializer is that properties that
+#     had been added to a object dynamically are being ignored (and it also has
+#     problems with some models).
+#     """
+#
+#     def _any(data):
+#         ret = None
+#         if type(data) is types.ListType:
+#             ret = _list(data)
+#         elif type(data) is types.DictType:
+#             ret = _dict(data)
+#         elif isinstance(data, Decimal):
+#             # json.dumps() cant handle Decimal
+#             ret = str(data)
+#         elif isinstance(data, models.query.QuerySet):
+#             # Actually its the same as a list ...
+#             ret = _list(data)
+#         elif isinstance(data, models.Model):
+#             ret = _model(data)
+#         else:
+#             ret = data
+#         return ret
+#
+#     def _model(data):
+#         ret = {}
+#         # If we only have a model, we only want to encode the fields.
+#         for f in data._meta.fields:
+#             ret[f.attname] = _any(getattr(data, f.attname))
+#         # And additionally encode arbitrary properties that had been added.
+#         fields = dir(data.__class__) + ret.keys()
+#         add_ons = [k for k in dir(data) if k not in fields]
+#         for k in add_ons:
+#             ret[k] = _any(getattr(data, k))
+#         return ret
+#
+#     def _list(data):
+#         ret = []
+#         for v in data:
+#             ret.append(_any(v))
+#         return ret
+#
+#     def _dict(data):
+#         ret = {}
+#         for k, v in data.items():
+#             ret[k] = _any(v)
+#         return ret
+#
+#     ret = _any(data)
+#
+#     return json.dumps(ret, cls=DateTimeAwareJSONEncoder)
+#
+#
+#
+# print(json_encode('我是中国人“哈哈”'))
+# print(json.dumps('我是中国人“哈哈”'))

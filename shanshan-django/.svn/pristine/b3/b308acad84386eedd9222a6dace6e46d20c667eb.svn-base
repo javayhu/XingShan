@@ -1,0 +1,23 @@
+
+<!--pagination util-->
+
+<ul class="pagination">
+  {% if paginator.has_previous %}
+    <li><a href="?page={{ paginator.previous_page_number }}"><i class="fa fa-chevron-left"></i></a></li>
+  {% else %}
+    <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+  {% endif %}
+  {% for i in paginator.paginator.page_range %}
+    {% if paginator.number == i %}
+      <li class="active"><a href="#">{{ i }}</a></li>
+    {% else %}
+      <li><a href="?page={{ i }}">{{ i }}</a></li>
+    {% endif %}
+  {% endfor %}
+  {% if paginator.has_next %}
+    <li><a href="?page={{ paginator.next_page_number }}"><i class="fa fa-chevron-right"></i></a></li>
+  {% else %}
+    <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+  {% endif %}
+</ul>
+

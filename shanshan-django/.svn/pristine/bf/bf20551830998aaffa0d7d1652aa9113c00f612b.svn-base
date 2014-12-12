@@ -1,0 +1,9 @@
+from django.conf.urls import patterns, include, url
+
+# hujiawei urls
+
+# urlpatterns = patterns('shan.views',
+#     url(r'^$', 'index', name='index'),
+#     url(r'^new/$', 'newproject', name='newproject'),
+# )
+

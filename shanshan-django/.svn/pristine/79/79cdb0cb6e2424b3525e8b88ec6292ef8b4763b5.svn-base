@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="爱心捐赠的公益网站！"/>
+
+    <title>姗姗来了</title>
+
+    <link rel="shortcut icon" href="/static/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/site.min.css"/>
+
+    <script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+{#      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>#}
+      <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+        /****上传前预览图片，支持 chrome ff safari****/
+        function PreviewImage(no) {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("imgfile").files[0]);
+
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("imgfile_prev").src = oFREvent.target.result;
+                document.getElementById("imgfile_prev").style.display = 'block';
+            };
+        }
+    </script>
+
+</head>
+<body class="home-template">
+
+<div class="wrap">
+
+    <!--header-->
+    <div class="header"
+         style="background-image: url(/static/img/SunriseHIHero.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-7 col-md-offset-5 col-lg-7 col-lg-offset-5">
+                    <div class="logotxt"><h1><a href="/"> "姗姗"来了</a></h1></div>
+                    <h2 class="text-center">善良的心就是太阳。——雨果</h2>
+
+                    <h2 class="text-center">人而好善，福虽未至，祸其远矣。——曾子</h2>
+
+                    <h2 class="text-center">"姗姗"虽然来迟了，但只要我们心中还留有那颗善良的种子，</h2>
+
+                    <h2 class="text-center">那么"姗姗"就会如及时雨一般让种子迅速发芽并茁壮成长。</h2>
+
+                    <h2 class="text-center">"姗姗"，让我们将行善成为一种习惯！</h2>
+
+                    <br/>
+
+                    <!--do not show this in mobile platform-->
+                    <div class="hidden-md hidden-lg col-xs-12 col-sm-12">
+                        <br/><br/><br/><br/>
+                    </div>
+                    <div class="hidden-xs hidden-sm col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
+                        <a href="#newModel" class="col-xs-12 col-sm-12 btn-outline" data-toggle="modal"
+                           data-target="#newModel"><span
+                                class="glyphicon glyphicon-heart"></span> 发布爱心捐款项目</a>
+                    </div>
+                    <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-4 col-lg-4 col-lg-offset-0 col-md-offset-0">
+                        <a href="#" class="col-xs-12 col-sm-12 btn-outline" data-toggle="modal"
+                           data-target=".bs-example-modal-sm">
+                            <span class="glyphicon glyphicon-download"></span>
+                            下载"姗姗"安卓客户端</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--show mobile in development-->
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title" id="mySmallModalLabel">提示</h4>
+                </div>
+                <div class="modal-body">
+                    安卓客户端正在开发中，敬请期待...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--show new project result-->
+    {% if result != -1 %}
+        <div class="alert {% if result == 1 %} alert-success {% else %} alert-warning {% endif %} alert-dismissible"
+             style="margin-top: 10px" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
+                    class="sr-only">Close</span></button>
+            <strong>{% if result == 1 %} 项目申请已经收到，我们将尽快处理 {% else %} 项目申请内容有误，请您重新填写 {% endif %}</strong>
+        </div>
+    {% endif %}
+
+    <main class="main" role="main">
+
+        <div class="container">
+            <div class="row">
+
+                <!--show project info-->
+                {% if projects %}
+                    {% for project in projects %}
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" data-toggle="modal"
+                             data-target="#myModal{{ project.id }}">
+                            <article class="post tag-guo-nei-wang-zhan tag-bootstrap-v3">
+                                <section class="post-featured-image">
+                                    <a class="thumbnail" href="#myModal{{ project.id }}">
+                                        <img src="{{ project.imgfile }}" style="width: 500px; height: 300px;">
+                                    </a>
+                                </section>
+                                <header class="post-header">
+                                    <h2 class="post-title">
+                                        <a href="#myModal{{ project.id }}">{{ project.name }}</a></h2>
+                                </header>
+                                <section class="post-content">
+                                    <p>{{ project.content }}</p>
+                                </section>
+                            </article>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+
+            <!--pagination-->
+            <div>
+                {% with paginator=projects %}
+
+                    {% if paginator %}
+                        <ul class="pagination">
+                            {% if paginator.has_previous %}
+                                <li><a href="?page={{ paginator.previous_page_number }}"><i
+                                        class="fa fa-chevron-left"></i></a>
+                                </li>
+                            {% else %}
+                                <li><a><i class="fa fa-chevron-left"></i></a></li>
+                            {% endif %}
+                            {% for i in paginator.paginator.page_range %}
+                                {% if paginator.number == i %}
+                                    <li class="active"><a href="#">{{ i }}</a></li>
+                                {% else %}
+                                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if paginator.has_next %}
+                                <li><a href="?page={{ paginator.next_page_number }}"><i class="fa fa-chevron-right"></i></a>
+                                </li>
+                            {% else %}
+                                <li><a><i class="fa fa-chevron-right"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+        </div>
+    </main>
+
+</div>
+
+
+<!-- Modal new project-->
+<div class="modal fade" id="newModel" tabindex="-2" role="dialog" aria-labelledby="newModelLabel"
+     aria-hidden="true">
+
+    <form class="form-horizontal" role="form" name="form" id="form" action="new/" method="post"
+          enctype="multipart/form-data"> {% csrf_token %}
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title" id="newModelLabel">发布爱心捐款项目</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="container-fluid">
+                        <div class="row-fluid">
+                            <div class="span12">
+
+                                <div class="form-group">
+                                    <label for="name" class="col-4 control-label">爱心项目名称<span
+                                            class="text-danger">*</span></label>
+
+                                    <div class="col-8"><input type="text" class="form-control" id="name" name="name"
+                                                              required="required">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="organiser" class="col-4 control-label">爱心项目发起人(或单位)<span
+                                            class="text-danger">*</span></label>
+
+                                    <div class="col-8"><input type="text" class="form-control" id="organiser"
+                                                              name="organiser" required></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-4 control-label">发起人(或单位)联系邮箱<span
+                                            class="text-danger">*</span></label>
+
+                                    <div class="col-8"><input type="email" class="form-control" id="email"
+                                                              pattern="^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$"
+                                                              name="email" required></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="target" class="col-4 control-label">爱心项目募款目标<span
+                                            class="text-danger">*</span></label>
+
+                                    <div class="col-8"><input type="text" class="form-control" id="target"
+                                                              pattern="^(([1-9]\d*)(\.\d{1,2})?)$|(0\.0?([1-9]\d?))$"
+                                                              name="target" required></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="imgfile" class="col-4 control-label">爱心项目相关图片<span
+                                            class="text-danger">*</span></label>
+
+                                    <div class="col-8"><input type="file" class="form-control" id="imgfile"
+                                                              onchange="PreviewImage()" name="imgfile"
+                                                              required> <br/>
+                                        <img src="" id="imgfile_prev" style="display: none;" class="img-thumbnail"
+                                             width="80" height="80"/>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="content" class="col-4 control-label">爱心项目内容描述<span
+                                            class="text-danger">*</span></label>
+
+                                    <div class="col-8"><textarea class="form-control" rows="6" id="content"
+                                                                 name="content" required></textarea></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <span class="text-danger">提交的内容将会通过邮件发送给管理员审核通过之后便会出现在首页</span> &nbsp;&nbsp;
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Modal view project-->
+{% if projects %}
+    {% for project in projects %}
+        <div class="modal fade" id="myModal{{ project.id }}" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel{{ project.id }}"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                        <h4 class="modal-title" id="myModalLabel{{ project.id }}">{{ project.name }}</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <pre class="text-left">{{ project.content }}</pre>
+
+                        <div class="alert alert-success" role="alert">
+                            <span>爱心项目计划募集 <strong class="text-danger">{{ project.target }}</strong> 元。目前已有 <strong
+                                    class="text-danger">{{ project.pcount }}</strong> 人捐款，总共募集 <strong
+                                    class="text-danger">{{ project.mcount }}</strong> 元。<br/>赶紧下载移动客户端贡献出你的力量吧！</span>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-download"></span>点击下载客户端
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+<!-- tech model -->
+<div class="modal fade" id="techModel" tabindex="-1" role="dialog" aria-labelledby="techModelLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                <h4 class="modal-title" id="techModelLabel">技术支持</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="list-group">
+                    <a href="http://sae.sina.com.cn/" class="list-group-item list-group-item-text techa"><img
+                            src="/static/img/sina.png"/>
+                        <span>网站采用Django框架开发部署于<strong>SinaAppEngine</strong></span></a>
+                    <a href="https://gitcafe.com" class="list-group-item list-group-item-info techa"><img
+                            src="/static/img/gitcafe.png"/>
+                        <span>安卓客户端源码托管于<strong>GitCafe</strong></span></a>
+                    <a href="https://pingplusplus.com/" class="list-group-item list-group-item-warning techa"><img
+                            src="/static/img/pingpp.png"/>
+                        <span>简单易用的移动支付服务平台<strong>Ping++</strong></span></a>
+                    <a href="http://fir.im" class="list-group-item list-group-item-danger techa"><img
+                            src="/static/img/fir.png" style="height: 42px; width: 92px;">
+                        <span> 移动客户端托管分发服务平台<strong>FIR.im</strong></span></a>
+                    <a href="http://segmentfault.com/" class="list-group-item list-group-item-success techa"> <img
+                            src="/static/img/sf.png"/>
+                        <span>开发者的问答交流社区<strong>SegmentFault</strong></span></a>
+                    <a href="http://www.qiniu.com/" class="list-group-item list-group-item-info techa"><img
+                            src="/static/img/qiniu.png"/>
+                        <span>在线云存储服务平台<strong>七牛云存储</strong></span></a>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- data model-->
+<div class="modal fade" id="dataModel" tabindex="-1" role="dialog" aria-labelledby="dataModelLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                <h4 class="modal-title" id="dataModelLabel">数据来源</h4>
+            </div>
+            <div class="modal-body">
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- footer-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="footer-col">
+                    <span class="text-center">开发作者</span>&nbsp;&nbsp;
+                    <a href="" id="like" csrf="{{ csrf_token }}"> <span class="glyphicon glyphicon-thumbs-up">快来点个赞(<strong><span
+                            id="likecount" style="color: #fff; font-size: 14px;">{{ count }}</span></strong>)</span>
+                    </a>
+                    <br/><br/> <span class="glyphicon glyphicon-user"></span> &nbsp;
+                    <a href="http://hujiaweibujidao.github.io/"><span>Hujiawei Bujidao</span></a>
+                    <br/><br/> <span class="glyphicon glyphicon-envelope"></span> &nbsp;
+                    <a href="mailto:hujiawei090807@gmail.com"><span>hujiawei090807@gmail.com</span></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="footer-col">
+                    <span class="text-center">友情链接</span> &nbsp;&nbsp;<a href="#techModel" data-toggle="modal"
+                                                                         data-target="#techModel"> <span
+                        class="glyphicon glyphicon-stats">查看详细技术支持</span> </a>
+                    <br/><br/> <a href="http://sae.sina.com.cn/"><span>SinaAppEngine</span></a>
+                    &nbsp;&nbsp; <a href="https://gitcafe.com"><span>GitCafe</span></a>
+                    &nbsp;&nbsp; <a href="https://pingplusplus.com/"><span>Ping++</span></a>
+                    &nbsp;&nbsp; <a href="http://fir.im"><span>FIR.im</span></a>
+                    <br/><br/> <a href="http://segmentfault.com/"><span>SegmentFault</span></a>
+                    &nbsp;&nbsp; <a href="http://v3.bootcss.com/"><span>Bootstrap</span></a>
+                    &nbsp;&nbsp; <a href="http://glyphicons.com/"><span>Glyphicons</span></a>
+                    &nbsp;&nbsp; <a href="http://www.qiniu.com/"><span>Qiniu</span></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="footer-col">
+                    <span class="text-center">数据来源</span> &nbsp;&nbsp;
+                    {#                    <a href="#dataModel" data-toggle="modal" data-target="#dataModel"> <span#}
+                    {#                        class="glyphicon glyphicon-th-list">查看详细数据来源</span> </a>#}
+                    <br/><br/> <span class="glyphicon glyphicon-heart"></span> &nbsp;
+                    <a href="http://gongyi.qq.com/succor/index.htm"><span>腾讯公益</span></a>
+                    <br/><br/> <span class="glyphicon glyphicon-tree-conifer"></span> &nbsp;
+                    <a href="http://www.demohour.com/"><span>点名时间</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

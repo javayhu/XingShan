@@ -1,0 +1,199 @@
+# coding=utf-8
+
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+
+# Create your views here.
+from django.views.decorators.csrf import csrf_exempt
+from ShanShan.settings import MEDIA_ROOT, MEDIA_URL
+from shan.models import Project
+
+import os
+from os import environ
+import json
+
+PROJECTS_PER_PAGE = 4
+
+# go to index page
+def index(request):
+    # whether we have new project result
+    result = -1
+    if request.GET.get('result') == '1':
+        result = 1
+    elif request.GET.get('result') == '0':
+        result = 0
+    # try to get the current like count
+    count = 1458  # default is this value, just for fun
+    if environ.get("APP_NAME", ""):  # if online, get like count from memcache
+        import pylibmc as memcache
+
+        mc = memcache.Client()
+        if not mc.get('count'):
+            mc.set("count", "1458")
+        count = mc.get("count")
+    # get some projects to show
+    projects = Project.objects.filter(state=True)
+    page = request.GET.get('page')
+    projects = _paginator(request, projects, page=page, size=PROJECTS_PER_PAGE)
+    return render(request, 'shan/index.html', {'projects': projects, 'result': result, 'count': count})
+
+
+# common paginator
+def _paginator(request, objs, page=1, size=PROJECTS_PER_PAGE):
+    paginator = Paginator(objs, size)
+    try:
+        objs = paginator.page(page)
+    except PageNotAnInteger:
+        objs = paginator.page(1)
+    except EmptyPage:
+        objs = paginator.page(paginator.num_pages)
+    return objs  # actually objs is a page, so in 'paginator.html', paginator means page
+
+
+# new project
+def newproject(request):
+    if request.method == 'POST':
+        try:
+            project = Project()
+            project.name = request.POST.get('name')
+            project.email = request.POST.get('email')
+            project.organiser = request.POST.get('organiser')
+            project.target = float(request.POST.get('target'))
+            project.content = request.POST.get('content')
+            project.imgfile = _uploadToStorage(request.FILES['imgfile'])  # save image!!!
+            project.state = True
+            project.save()
+            return redirect('/?result=1')
+        except:
+            return redirect('/?result=0')
+    return redirect('/?result=0')
+
+
+DOMAIN_NAME = 'projectdomain'
+# upload image to storage
+def _uploadToStorage(content):
+    if environ.get("APP_NAME", ""):  # if online, use SAE storage service
+        import sae.const
+
+        access_key = sae.const.ACCESS_KEY
+        secret_key = sae.const.SECRET_KEY
+        appname = sae.const.APP_NAME
+        domain_name = DOMAIN_NAME
+
+        import sae.storage
+
+        s = sae.storage.Client()
+        ob = sae.storage.Object(content.read())
+        url = s.put(domain_name, content.name, ob)
+    else:
+        project_pictures = MEDIA_ROOT + '/projects/'
+        if not os.path.exists(project_pictures):
+            os.makedirs(project_pictures)
+        filename = project_pictures + content.name + '.jpg'
+        with open(filename, 'wb+') as destination:
+            for chunk in content.chunks():
+                destination.write(chunk)
+        url = MEDIA_URL + 'projects/' + content.name + '.jpg'
+    return url
+
+
+# user like the site
+def like(request):
+    if environ.get("APP_NAME", ""):  # if online, use SAE memcache service
+        import pylibmc as memcache
+
+        mc = memcache.Client()
+        if not mc.get('count'):
+            mc.set("count", "0")
+        mc.incr("count")
+        return HttpResponse(mc.get('count'))
+    else:
+        current = request.POST.get('current')
+        print('current: ' + current)
+        if not current:
+            current = 1
+        else:
+            current = int(current) + 1
+        return HttpResponse(current)
+
+
+import pingpp
+
+APP_ID = 'app_Tq1mjLbTunH81qPi'
+TEST_KEY = 'sk_test_TSO0OKHe9uX1qfLm588i9ijT'
+LIVE_KEY = ''  # current no use
+pingpp.api_key = TEST_KEY
+
+# ping++ client request, client has no csrf code
+@csrf_exempt
+def pay(request):
+    if request.method == 'POST':
+        import uuid
+        # c06a6247-7079-11e4-9e7d-1040f397bb48 -> `c06a6247` as order_no
+        orderno = str(uuid.uuid1())[0:8]
+        channel = request.POST.get('channel')
+        amount = request.POST.get('amount')
+        subject = request.POST.get('subject')
+        body = request.POST.get('body')
+        # print(channel+" "+amount)
+        remoteip = request.META['REMOTE_ADDR']
+
+        ch = pingpp.Charge.create(
+            order_no=orderno,
+            channel=channel,
+            amount=amount,
+            subject=subject,
+            body=body,
+            currency='cny',
+            app=dict(id=APP_ID),
+            client_ip=remoteip  # must be an IP address
+        )
+        return HttpResponse(json.dumps(ch), content_type="application/json")
+    else:
+        return render(request, 'shan/pingpp.html')
+
+
+# import qiniu
+# import qiniu.conf
+# import qiniu.rs
+# import qiniu.io
+# BUCKET_NAME = "shanshanlaichi"
+# qiniu.conf.ACCESS_KEY = "jkGarjPB6G-3YqyDwj2JU_CzianXBn5OLNpnhmaC"
+# qiniu.conf.SECRET_KEY = "qHMNLS9x2lPD2M-oF-Dx_IPPUPfdP9kCbsvrAT9T"
+#
+# def uptoken(request):
+# policy = qiniu.rs.PutPolicy(BUCKET_NAME)
+# token = policy.token()
+# data = {'uptoken': token}
+# return HttpResponse(json.dumps(data), content_type="application/json")
+
+def notify(request):
+    pass
+
+
+# build a json string from a project, no state and startdate
+def _buildJsonProject(project):
+    data = '{id:' + project.id + ',name:' + project.name + ',content:' + project.content \
+           + ',organiser:' + project.organiser + ',target:' + project.target + ',email:' + project.email \
+           + ',imgfile:' + project.imgfile + ',pcount:' + project.pcount + ',mcount:' + project.mcount + '}'
+    return data
+
+
+#build a json string from projects
+def _buildJsonData(projects):
+    data = '['
+    for project in projects:
+        data = data + _buildJsonProject(project) + ','
+    data = data + ']'
+    return data
+
+
+#list all projects into a json string
+def list(request):
+    projects = Project.objects.filter(state=True)
+    return HttpResponse(_buildJsonData(projects), content_type="application/json")
+
+
+
+

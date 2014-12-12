@@ -1,0 +1,13 @@
+name: ShanShan
+version: 2
+
+libraries:
+- name: "django"
+  version: "1.4"
+
+handlers:
+- url: /static/
+  static_path: static
+
+- url: /media/
+  static_path: media

@@ -1,0 +1,14 @@
+# coding=utf-8
+from django import forms
+
+from django.forms import ModelForm
+from shan.models import Project
+
+
+class ProjectForm(ModelForm):
+    # content = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}),
+    #                           max_length=4000)
+    class Meta:
+        model = Project
+        # fields = '__all__'
+        # exclude = ['startdate']

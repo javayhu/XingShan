@@ -1,0 +1,63 @@
+#!/usr/bin/env python
+
+#this file is just a demo
+
+import pingpp
+
+APP_ID = 'app_Tq1mjLbTunH81qPi'
+TEST_KEY = 'sk_test_TSO0OKHe9uX1qfLm588i9ijT'
+LIVE_KEY = '' #current no use
+
+pingpp.api_key = TEST_KEY
+
+ch = pingpp.Charge.create(
+    order_no='1234567890',
+    channel='alipay',
+    amount=1,
+    subject='test-subject',
+    body='test-body',
+    currency='cny',
+    app=dict(id=APP_ID),
+    client_ip='127.0.0.1' #must be an IP address
+)
+
+print ch
+
+# {
+#   "order_no": "1234567890",
+#   "extra": {},
+#   "app": "app_Tq1mjLbTunH81qPi",
+#   "livemode": false,
+#   "currency": "cny",
+#   "time_settle": null,
+#   "time_expire": 1416320997,
+#   "id": "ch_GyH8uTf1yTCKzn1C0GG0CWn1",
+#   "subject": "test-subject",
+#   "failure_msg": null,
+#   "channel": "alipay",
+#   "metadata": {},
+#   "body": "test-body",
+#   "credential": {
+#     "alipay": {
+#       "orderInfo": "_input_charset=\"utf-8\"&body=\"test-body\"&it_b_pay=\"1440m\"&notify_url=\"https%3A%2F%2Fapi.pingplusplus.com%2Fnotify%2Fcharges%2Fch_GyH8uTf1yTCKzn1C0GG0CWn1\"&out_trade_no=\"1234567890\"&partner=\"2008025636479977\"&payment_type=\"1\"&seller_id=\"2008025636479977\"&service=\"mobile.securitypay.pay\"&subject=\"test-subject\"&total_fee=\"0.01\"&sign=\"UzQ4U0dPVGkxZUgwdXZmdmo5OTRpSEMw\"&sign_type=\"RSA\""
+#     },
+#     "object": "credential"
+#   },
+#   "client_ip": "127.0.0.1",
+#   "description": null,
+#   "amount_refunded": 0,
+#   "refunded": false,
+#   "object": "charge",
+#   "paid": false,
+#   "amount_settle": 0,
+#   "failure_code": null,
+#   "refunds": {
+#     "url": "/v1/charges/ch_GyH8uTf1yTCKzn1C0GG0CWn1/refunds",
+#     "has_more": false,
+#     "object": "list",
+#     "data": []
+#   },
+#   "created": 1416234597,
+#   "transaction_no": null,
+#   "amount": 1
+# }
