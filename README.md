@@ -1,5 +1,4 @@
       
-      
 ## "使徒行善"，让我们将行善成为一种习惯！
 
 ### 0. 使徒行善 核心想法
@@ -78,5 +77,6 @@ android app端是供用户来完成问卷调查任务获取积分然后向爱心
 特别感谢以下优秀科技企业的技术支持
 
 ![techs](http://shanshanlaichi.qiniudn.com/techs-xs.png)
+
 
 
